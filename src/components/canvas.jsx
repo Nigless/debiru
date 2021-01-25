@@ -1,12 +1,12 @@
 import React, { createRef, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Canvas = styled.canvas({
+const Root = styled.canvas({
 	width: '100%',
 	display: 'block',
 });
 
-export default function (props) {
+export default function Canvas(props) {
 	const canvas = createRef();
 
 	const { onload, className } = props;
@@ -16,5 +16,5 @@ export default function (props) {
 		elem.height = elem.offsetHeight;
 		onload(elem);
 	}, []);
-	return <Canvas ref={canvas} className={className} />;
+	return <Root ref={canvas} className={className} />;
 }
